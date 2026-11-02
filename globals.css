@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Direction : encre bleu-nuit + orange brûlé, sur fond papier chaud.
+   Titres en Fraunces (serif affirmée), texte en IBM Plex Sans. */
+:root {
+  --ink: #14213d;
+  --flame: #c2410c;
+  --paper: #faf7f2;
+  --paper-deep: #f1ece3;
+  --rule: #d9d2c5;
+  --mute: #5b6376;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-flame: var(--flame);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-rule: var(--rule);
+  --color-mute: var(--mute);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces Variable", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--flame);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Champ légal à compléter : impossible à rater avant la mise en ligne */
+.todo {
+  background: #ffe4cf;
+  color: #7c2d12;
+  font-weight: 600;
+  padding: 0 0.3em;
+  border-radius: 2px;
+  border-bottom: 2px solid var(--flame);
+}
